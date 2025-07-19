@@ -1,0 +1,12 @@
+{
+  "DelayMs": 300,
+  "DropPercent": 50,
+  "DuplicatePercent": 30,
+  "ThrottleKbps": 500,
+  "DelayEnabled": true,
+  "DropEnabled": true,
+  "DuplicateEnabled": true,
+  "ThrottleEnabled": true,
+  "LagJitterMs": 100,
+  "LagEnabled": true
+}

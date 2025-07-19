@@ -1,0 +1,42 @@
+﻿<Window x:Class="ClumsyCloneWPF.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Clumsy Clone" Height="450" Width="800"
+        ResizeMode="CanResize"
+        WindowStartupLocation="CenterScreen">
+
+    <Grid Margin="10">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="Auto"/>
+        </Grid.ColumnDefinitions>
+
+        <!-- Interface selection -->
+        <Label Content="Select Network Interface:" Grid.Row="0" Grid.Column="0" Margin="0,0,10,0" VerticalAlignment="Center"/>
+        <ComboBox x:Name="deviceComboBox" Grid.Row="0" Grid.Column="1" Width="500" Margin="0,0,10,0"/>
+
+        <!-- Start/Stop buttons -->
+        <StackPanel Orientation="Horizontal" Grid.Row="0" Grid.Column="2">
+            <Button x:Name="startButton" Content="Start" Click="StartButton_Click" Width="75" Margin="0,0,10,0"/>
+            <Button x:Name="stopButton" Content="Stop" Click="StopButton_Click" Width="75"/>
+        </StackPanel>
+
+        <!-- Log box -->
+        <TextBox x:Name="logTextBox" Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="3" Margin="0,10,0,10" 
+                 VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Auto" 
+                 TextWrapping="Wrap" AcceptsReturn="True" IsReadOnly="True" 
+                 FontFamily="Consolas" FontSize="12" Background="#1e1e1e" Foreground="White"/>
+
+        <!-- Status label -->
+        <Label x:Name="statusLabel" Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="3" Content="Status: Idle"
+               HorizontalAlignment="Left" VerticalAlignment="Bottom" FontWeight="Bold" Foreground="DarkGreen"/>
+    </Grid>
+</Window>
+
